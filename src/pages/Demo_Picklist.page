@@ -1,0 +1,28 @@
+<apex:page controller="Demo_Picklist_ctrl" >
+<apex:form >
+
+    <apex:pageBlock title="Chosose country" id="Main_pgbk" >
+    <apex:outputLabel >Show Results: </apex:outputLabel>       
+        <apex:inputCheckbox value="{!showResult}" onclick="">     
+            <apex:actionSupport event="onchange" reRender="result_pg" /> 
+        </apex:inputCheckbox> 
+              
+        <!--   
+        <apex:selectList label="Choose" multiselect="false" size="1" value="{!chosenCountry}">        
+            <apex:selectOption itemLabel="IND" itemValue="IND"></apex:selectOption>
+            <apex:selectOption itemLabel="USA" itemValue="USA"></apex:selectOption>
+            <apex:selectOption itemLabel="UK" itemValue="UK"></apex:selectOption>
+            <apex:actionSupport event="onchange" reRender="result_pg"/>
+        </apex:selectList>
+        -->
+    <apex:outputPanel id="result_pg">
+        <apex:pageBlocksection title="Results" rendered="{!showResult}">    
+            <apex:outputText value="{!chosenCountry}"/>  
+        </apex:pageBlocksection>
+    </apex:outputPanel>
+    </apex:pageBlock>  
+    
+    
+      
+</apex:form>
+</apex:page>
